@@ -60,6 +60,7 @@ class _MyHomePageState extends State<MyHomePage> {
       bottomNavigationBar: NavigationBarTheme(
         data: NavigationBarThemeData(
           backgroundColor: Color.fromARGB(255, 0, 0, 0),
+          surfaceTintColor: Colors.white,
           indicatorColor: Colors.grey.shade900,
           labelTextStyle: MaterialStateProperty.all(
             TextStyle(
