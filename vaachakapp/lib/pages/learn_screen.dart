@@ -62,7 +62,7 @@ class LearnScreen extends StatelessWidget {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(14.0),
                             image: const DecorationImage(
-                              image: AssetImage("images/asl_basics.jpg"),
+                              image: AssetImage("assets/images/asl_basics.jpg"),
                               fit: BoxFit.cover,
                             ),
                           ),
@@ -107,7 +107,7 @@ class LearnScreen extends StatelessWidget {
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(16.0),
                           image: DecorationImage(
-                            image: AssetImage("images/basics_isl.jpg"),
+                            image: AssetImage("assets/images/basics_isl.jpg"),
                             fit: BoxFit.cover,
                           ),
                         )),
@@ -152,7 +152,7 @@ class LearnScreen extends StatelessWidget {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(16.0),
                             image: DecorationImage(
-                              image: AssetImage("images/article_1.jpg"),
+                              image: AssetImage("assets/images/article_1.jpg"),
                               fit: BoxFit.cover,
                             ),
                           )),
@@ -196,7 +196,7 @@ class LearnScreen extends StatelessWidget {
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(14.0),
                               image: DecorationImage(
-                                image: AssetImage("images/feelingin_isl.jpg"),
+                                image: AssetImage("assets/images/feelingin_isl.jpg"),
                                 fit: BoxFit.cover,
                               ),
                             ),
@@ -241,7 +241,7 @@ class LearnScreen extends StatelessWidget {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(16.0),
                             image: DecorationImage(
-                              image: AssetImage("images/asl_phrases.jpg"),
+                              image: AssetImage("assets/images/asl_phrases.jpg"),
                               fit: BoxFit.cover,
                             ),
                           )),
@@ -286,7 +286,7 @@ class LearnScreen extends StatelessWidget {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(16.0),
                             image: DecorationImage(
-                              image: AssetImage("images/article2.jpg"),
+                              image: AssetImage("assets/images/article2.jpg"),
                               fit: BoxFit.cover,
                             ),
                           )),

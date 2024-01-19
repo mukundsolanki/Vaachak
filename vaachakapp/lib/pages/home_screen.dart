@@ -56,7 +56,7 @@ class _HomeScreenState extends State<HomeScreen>
     return Scaffold(
       body: Center(
         child: texts.isEmpty
-            ? Text('No Texts Yet')
+            ? Text('No Signs Yet')
             : ListView.builder(
                 itemCount: texts.length,
                 itemBuilder: (context, index) {
