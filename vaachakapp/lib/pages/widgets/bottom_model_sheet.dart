@@ -21,15 +21,33 @@ class _MyBottomSheetState extends State<MyBottomSheet> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 400,
       padding: EdgeInsets.all(16.0),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                'Add Sign',
+                style: TextStyle(
+                  fontSize: 30.0,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+              IconButton(
+                icon: Icon(Icons.close),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+              ),
+            ],
+          ),
+          SizedBox(height: 16.0),
           TextField(
             controller: textEditingController,
             decoration: InputDecoration(
-              labelText: 'Enter your text',
+              labelText: 'Enter name of your sign',
             ),
           ),
           SizedBox(height: 16.0),
