@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'pages/home_screen.dart';
+import 'pages/connect_screen.dart';
+import 'pages/learn_screen.dart';
+import 'pages/settings_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -29,13 +33,12 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   int index = 0;
   final screens = [
-    Center(child: Text('Home Screen'),),
-    Center(child: Text('Connect  Screen'),),
-    Center(child: Text('Language Screen'),),
-    Center(child: Text('Settings Screen'),),
+    HomeScreen(),
+    ConnectScreen(),
+    LearnScreen(),
+    SettingsScreen(),
   ];
 
   @override
@@ -54,28 +57,29 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ),
         child: NavigationBar(
-          selectedIndex: index,
-          onDestinationSelected: (index) => {
-            setState( () => this.index = index)
-          },
-          destinations: [
-          NavigationDestination(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          NavigationDestination(
-            icon: Icon(Icons.connect_without_contact),
-            label: 'Connect',
-          ),
-          NavigationDestination(
-            icon: Icon(Icons.language),
-            label: 'Languages',
-          ),
-          NavigationDestination(
-            icon: Icon(Icons.settings),
-            label: 'Settings',
-          ),
-        ]),
+            selectedIndex: index,
+            onDestinationSelected: (index) =>
+                {setState(() => this.index = index)},
+            destinations: [
+              NavigationDestination(
+                icon: Icon(Icons.home_outlined),
+                label: 'Home',
+                selectedIcon: Icon(Icons.home_filled),
+              ),
+              NavigationDestination(
+                icon: Icon(Icons.connect_without_contact_outlined),
+                label: 'Connect',
+              ),
+              NavigationDestination(
+                icon: Icon(Icons.language_outlined),
+                label: 'Languages',
+              ),
+              NavigationDestination(
+                icon: Icon(Icons.settings_outlined),
+                label: 'Settings',
+                selectedIcon: Icon(Icons.settings),
+              ),
+            ]),
       ),
     );
   }
