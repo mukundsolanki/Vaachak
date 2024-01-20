@@ -10,7 +10,7 @@
 Millions face the daily challenge of effective communication, especially those who rely on sign language. The lack of seamless translation hinders their access to education, employment, and social opportunities. But do they really want to learn sign language for others to understand them?
 
 ## **SOLUTION** 
-
+Introducing Vaachak,a groundbreaking solution that goes beyond traditional communication aids.It is a hardware device along with a companion mobile application.
 1) Empowerment through Language:This device will adapt to once disabilities by providing users the ability to create their own Language/sign.
 
 2) Real-time translation of Sign Language to Speech
