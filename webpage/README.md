@@ -26,7 +26,7 @@ To get started with Pratyaksh, you can follow these steps:
 
 1. _Clone the Repository:_
    bash
-   git clone https://github.com/mukundsolanki/Vaachak-TecHacks
+   git clone https://github.com/mukundsolanki/Vaachak-TecHacks.git
 
 2. _Change Directory:_
    bash

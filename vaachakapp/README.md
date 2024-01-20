@@ -1,6 +1,5 @@
 # **VAACHAK**
 
-
 ## Overview
 This mobile app serves as a crucial and feature-rich extension of the AAC device, enhancing its functionality and providing a user-friendly interface. The login screen serves as the initial gateway, where users input the IP address of the Vaachak device, establishing a seamless connection. Once logged in, the home screen becomes a personalized hub, allowing users to effortlessly add and customize signs, tailoring the communication experience to their unique needs.
 

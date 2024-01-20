@@ -1,20 +1,22 @@
-# AUGMENTED ALTERNATIVE COMMUNICATION DEVICE
+# VAACHAK - AUGMENTED ALTERNATIVE COMMUNICATION DEVICE
+
+### Team Name: SyntaxSorcerers
+
+### Team Number: 17
+
 
 ## **PROBLEM STATEMENT**
 Millions face the daily challenge of effective communication, especially those who rely on sign language. The lack of seamless translation hinders their access to education, employment, and social opportunities. But do they really want to learn sign language for others to understand them?
 
 ## **SOLUTION** 
 
-1)Empowerment through Language:This device will adapt to once disabilities by providing users the ability to create their own Language/sign.
+1) Empowerment through Language:This device will adapt to once disabilities by providing users the ability to create their own Language/sign.
 
-2)Real-time translation of Sign Language to Speech
+2) Real-time translation of Sign Language to Speech
 
-3)Humanized Communication:It will make the communication process very human with the help of  Google Text-to-Speech(gTTS).
+3) Humanized Communication:It will make the communication process very human with the help of  Google Text-to-Speech(gTTS).
 
-4)Expressive Emotions:This app will help users to express their emotions better with the help of the therapist, therefore improving their mental health.
-
-<img src="https://github.com/Gresey/Vaachak-TecHacks/assets/113979215/96b00dcc-9dd2-4b31-b372-a88c7e1223b4" width="270" height="200">
-
+4) Expressive Emotions:This app will help users to express their emotions better with the help of the therapist, therefore improving their mental health.
 
 ## **FEASIBILITY**
 
