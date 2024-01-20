@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:vaachakapp/pages/states/app_provider.dart';
 import 'dart:math' as math;
 import 'widgets/bottom_model_sheet.dart';
+import 'package:http/http.dart' as http;
 
 class HomeScreen extends StatefulWidget {
   String get title => 'as';
@@ -9,7 +12,8 @@ class HomeScreen extends StatefulWidget {
   _HomeScreenState createState() => _HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateMixin {
+class _HomeScreenState extends State<HomeScreen>
+    with SingleTickerProviderStateMixin {
   List<TextInfo> texts = [];
   late AnimationController _rotateController;
 
@@ -29,11 +33,7 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
     });
   }
 
-  void removeText(int index) {
-    setState(() {
-      texts.removeAt(index);
-    });
-  }
+ 
 
   @override
   void initState() {
@@ -51,24 +51,43 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
     _rotateController.dispose();
     super.dispose();
   }
+  Future<void> _sendHttpRequest(String enteredText) async {
+    final ipAddressProvider = Provider.of<IPAddressProvider>(context, listen: false);
+    final ipAddress = ipAddressProvider.ipAddress;
+
+    final port = 5050;
+    final url = Uri.parse('http://$ipAddress:$port/delete-sign');
+
+    try {
+      final response = await http.post(url, body: {'text': enteredText});
+
+      if (response.statusCode == 200) {
+        print('Text sent successfully!');
+      } else {
+        print('Failed to send text. Error: ${response.statusCode}');
+      }
+    } catch (error) {
+      print('Error: $error');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 0, 0, 0),
+      backgroundColor: Color.fromARGB(255, 255, 255, 255),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
+          SizedBox(height: 10.0),
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: Text(
               'Hello User,',
               style: TextStyle(
-                fontSize: 30.0,
-                color: Colors.white,
-                fontWeight: FontWeight.w600,
-                fontStyle: FontStyle.italic
-              ),
+                  fontSize: 30.0,
+                  color: Colors.black,
+                  fontWeight: FontWeight.w600,
+                  fontStyle: FontStyle.italic),
             ),
           ),
           Expanded(
@@ -77,14 +96,16 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
                   ? Text(
                       'No Signs Yet',
                       style: TextStyle(
-                        color: Colors.white60,
+                        color: Colors.black87,
                       ),
                     )
                   : ListView.builder(
                       itemCount: texts.length,
                       itemBuilder: (context, index) {
                         return Container(
-                          margin: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+                          height: 70,
+                          margin: EdgeInsets.symmetric(
+                              horizontal: 16.0, vertical: 8.0),
                           decoration: BoxDecoration(
                             color: Colors.grey.shade300,
                             borderRadius: BorderRadius.circular(12.0),
@@ -106,7 +127,9 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
                                       animation: _rotateController,
                                       builder: (context, child) {
                                         return Transform.rotate(
-                                          angle: _rotateController.value * 5.0 * math.pi,
+                                          angle: _rotateController.value *
+                                              5.0 *
+                                              math.pi,
                                           child: Icon(
                                             Icons.sync_rounded,
                                             color: Colors.blue,
@@ -125,7 +148,12 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
                                   color: Colors.red,
                                 ),
                                 onPressed: () {
-                                  removeText(index);
+                                 String textToRemove = texts[index].text;
+                              _sendHttpRequest(textToRemove); // Send HTTP request with the text
+
+                              setState(() {
+                                texts.removeAt(index);
+                              });
                                 },
                               ),
                             ],
@@ -142,19 +170,28 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
         backgroundColor: Color.fromARGB(255, 207, 61, 51),
         onPressed: () {
           showModalBottomSheet(
+             backgroundColor: Colors.transparent,
             isScrollControlled: true,
             context: context,
             builder: (BuildContext context) =>
                 MyBottomSheet(onTextCreated: addText),
           );
         },
-        label: Text('ADD SIGN'),
-        icon: Icon(Icons.edit),
+        label: Text(
+          'ADD SIGN',
+          style: TextStyle(
+            fontSize: 15,
+            color: Colors.black,
+          ),
+        ),
+        icon: Icon(
+          Icons.edit,
+          color: Colors.black,
+        ),
       ),
     );
   }
 }
-
 
 class TextInfo {
   final String text;
