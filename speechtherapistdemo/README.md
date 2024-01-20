@@ -1,16 +1,26 @@
-# speechtherapistdemo
+# SpeechTherapistApp
 
-A new Flutter project.
+A speech therapist, also known as a speech-language pathologist (SLP), is a healthcare professional trained to assess, diagnose, and treat various communication and speech disorders. These disorders may include difficulties with speech, language, voice, fluency, and swallowing. Speech therapists work with people of all ages, from infants to the elderly, and they often collaborate with individuals who have disabilities or face challenges in their communication abilities.
+Speech therapist connect with users and daigonue them
 
-## Getting Started
+## Installation
+To begin using Vaachak Application, follow these steps:
 
-This project is a starting point for a Flutter application.
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/mukundsolanki/Vaachak-TecHacks/
+   ```
 
-A few resources to get you started if this is your first Flutter project:
+2. **Navigate to the Project Directory:**
+   ```bash
+   cd vaachakapp
+   ```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+3. **Install Dependencies:**
+   ```bash
+    flutter pub get
+   ```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+4. **Run the Application:**
+    ```bash
+    flutter run
