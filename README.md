@@ -1,4 +1,5 @@
 # VAACHAK - AUGMENTED ALTERNATIVE COMMUNICATION DEVICE
+<img src="https://github.com/mukundsolanki/Vaachak-TecHacks/assets/113979215/486dfdde-b351-4101-a780-074e11f735b9" width="800">
 
 ### Team Name: SyntaxSorcerers
 
@@ -47,6 +48,16 @@ Now, let's talk about sustainability. The hardware used in Vaachak is not just a
 
 ## **Prerequisites**
 Before you start, make sure you have Python installed on your system.
+
+## **Branch Structure**
+We have maintained a single branch `main` will all the commits from the team, it contains 4 directories hardware, vaachakapp,speechtherapistdemo and webpage.
+
+## **Team Members**
+
+[@Mukund Solanki ](https://github.com/mukundsolanki)
+[@Daksh Kitukale](https://github.com/K-Daksh)
+[@Gyaneshwar Chaudhary](https://github.com/gyaneshwarchoudhary)
+[@Gresey Patidar](https://github.com/Gresey)
 
 ## **Contributions**
 So here's the call to action, folks. Whether you're a developer, enthusiast, or someone passionate about making a difference, Vaachak welcomes you to contribute to this incredible initiative.
