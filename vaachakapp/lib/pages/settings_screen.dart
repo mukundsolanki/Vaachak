@@ -87,66 +87,73 @@ class SettingsScreen extends StatelessWidget {
                 ),
                 SizedBox(height: 16),
                 // Add a button below the existing containers
-                Container(
-                  decoration: BoxDecoration(
-                    color: Colors.grey[200],
-                    borderRadius: BorderRadius.circular(12.0),
+                ElevatedButton(
+                  style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all<Color>(
+                        Colors.grey[200]!),
+                    shape: MaterialStateProperty.all<OutlinedBorder>(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10.0),
+                      ),
+                    ),
+                    fixedSize: MaterialStateProperty.all<Size>(
+                      Size(150, 48),
+                    ),
                   ),
-                  child: ElevatedButton(
-                    onPressed: () {
-                      // Open a dialog here
-                      showDialog(
-                        context: context,
-                        builder: (BuildContext context) {
-                          String selectedLanguage =
-                              'English'; // Default language
+                  onPressed: () {
+                    // Open a dialog here
+                    showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        String selectedLanguage = 'English'; // Default language
 
-                          return AlertDialog(
-                            title: Text('Select Language'),
-                            content: Column(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                // Add a DropdownButton for language selection
-                                DropdownButton<String>(
-                                  value: selectedLanguage,
-                                  onChanged: (String? newValue) {
-                                    if (newValue != null) {
-                                      selectedLanguage = newValue;
-                                    }
-                                  },
-                                  items: ['English', 'Hindi', 'French']
-                                      .map<DropdownMenuItem<String>>(
-                                          (String value) {
-                                    return DropdownMenuItem<String>(
-                                      value: value,
-                                      child: Text(value),
-                                    );
-                                  }).toList(),
-                                ),
-                              ],
-                            ),
-                            actions: [
-                              TextButton(
-                                onPressed: () {
-                                  Navigator.of(context).pop();
+                        return AlertDialog(
+                          title: Text('Select Language'),
+                          content: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              // Add a DropdownButton for language selection
+                              DropdownButton<String>(
+                                value: selectedLanguage,
+                                onChanged: (String? newValue) {
+                                  if (newValue != null) {
+                                    selectedLanguage = newValue;
+                                  }
                                 },
-                                child: Text('Cancel'),
-                              ),
-                              TextButton(
-                                onPressed: () async {
-                                  // Handle language selection here
-                                  print(selectedLanguage);
-                                  await _sendHttpRequest(selectedLanguage);
-                                },
-                                child: Text('Save'),
+                                items: [
+                                  'English',
+                                  'Hindi',
+                                  'French'
+                                ].map<DropdownMenuItem<String>>((String value) {
+                                  return DropdownMenuItem<String>(
+                                    value: value,
+                                    child: Text(value),
+                                  );
+                                }).toList(),
                               ),
                             ],
-                          );
-                        },
-                      );
-                    },
-                    child: Text('Open Dialog'),
-                  ),
+                          ),
+                          actions: [
+                            TextButton(
+                              onPressed: () {
+                                Navigator.of(context).pop();
+                              },
+                              child: Text('Cancel'),
+                            ),
+                            TextButton(
+                              onPressed: () async {
+                                // Handle language selection here
+                                print(selectedLanguage);
+                                await _sendHttpRequest(selectedLanguage);
+                              },
+                              child: Text('Save'),
+                            ),
+                          ],
+                        );
+                      },
+                    );
+                  },
+                  child: Text('Change Languages'),
                 ),
               ],
             ),
