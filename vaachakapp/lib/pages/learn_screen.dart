@@ -1,7 +1,7 @@
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+// ignore: must_be_immutable
 class LearnScreen extends StatelessWidget {
   final String link_asl_basics =
       'https://youtu.be/DaMjr4AfYA0?si=EMSi_vNlIxLy_vJ8';
@@ -17,6 +17,8 @@ class LearnScreen extends StatelessWidget {
       'https://def.org.in/indian-sign-language-classes/';
   late double _height;
   late double _width;
+
+  LearnScreen({super.key});
 
   Future<void> _launchYouTube(String url) async {
     try {
