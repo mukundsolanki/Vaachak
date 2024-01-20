@@ -11,4 +11,8 @@ class IPAddressProvider extends ChangeNotifier {
     _ipAddress = ipAddress;
     notifyListeners();
   }
+
 }
+
+}
+
