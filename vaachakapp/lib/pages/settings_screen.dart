@@ -1,10 +1,36 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'states/app_provider.dart';
+import 'package:http/http.dart' as http;
 
 class SettingsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final ipAddressProvider = Provider.of<IPAddressProvider>(context);
+
+    Future<void> _sendHttpRequest(String selectedLanguage) async {
+      final ipAddressProvider =
+          Provider.of<IPAddressProvider>(context, listen: false);
+      final ipAddress = ipAddressProvider.ipAddress;
+
+      final port = 5050;
+      final url = Uri.parse('http://$ipAddress:$port/select-language');
+
+      try {
+        final response = await http.post(url, body: {'text': selectedLanguage});
+
+        if (response.statusCode == 200) {
+          print('Text sent successfully!');
+        } else {
+          print('Failed to send text. Error: ${response.statusCode}');
+        }
+      } catch (error) {
+        print('Error: $error');
+      }
+    }
+
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 0, 0, 0),
+      backgroundColor: Color.fromARGB(255, 255, 255, 255),
       body: Stack(
         children: [
           // Bottom layer: Cover image
@@ -34,7 +60,7 @@ class SettingsScreen extends StatelessWidget {
                       child: DeviceStatusContainer(
                         icon: Icons.wifi,
                         heading: 'IP Address',
-                        subheading: '127.0.0.1',
+                        subheading: ipAddressProvider.ipAddress,
                       ),
                     ),
                   ],
@@ -59,6 +85,69 @@ class SettingsScreen extends StatelessWidget {
                     ),
                   ],
                 ),
+                SizedBox(height: 16),
+                // Add a button below the existing containers
+                Container(
+                  decoration: BoxDecoration(
+                    color: Colors.grey[200],
+                    borderRadius: BorderRadius.circular(12.0),
+                  ),
+                  child: ElevatedButton(
+                    onPressed: () {
+                      // Open a dialog here
+                      showDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          String selectedLanguage =
+                              'English'; // Default language
+
+                          return AlertDialog(
+                            title: Text('Select Language'),
+                            content: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                // Add a DropdownButton for language selection
+                                DropdownButton<String>(
+                                  value: selectedLanguage,
+                                  onChanged: (String? newValue) {
+                                    if (newValue != null) {
+                                      selectedLanguage = newValue;
+                                    }
+                                  },
+                                  items: ['English', 'Hindi', 'French']
+                                      .map<DropdownMenuItem<String>>(
+                                          (String value) {
+                                    return DropdownMenuItem<String>(
+                                      value: value,
+                                      child: Text(value),
+                                    );
+                                  }).toList(),
+                                ),
+                              ],
+                            ),
+                            actions: [
+                              TextButton(
+                                onPressed: () {
+                                  Navigator.of(context).pop();
+                                },
+                                child: Text('Cancel'),
+                              ),
+                              TextButton(
+                                onPressed: () async {
+                                  // Handle language selection here
+                                  print(selectedLanguage);
+                                  await _sendHttpRequest(selectedLanguage);
+                                },
+                                child: Text('Save'),
+                              ),
+                            ],
+                          );
+                        },
+                      );
+                    },
+                    child: Text('Open Dialog'),
+                  ),
+                ),
               ],
             ),
           ),
@@ -78,14 +167,14 @@ class SettingsScreen extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
-                    color: Colors.white,
+                    color: Colors.black,
                   ),
                 ),
                 Text(
                   'User ID',
                   style: TextStyle(
                     fontSize: 16,
-                    color: Colors.white,
+                    color: Colors.black,
                   ),
                 ),
               ],
@@ -96,7 +185,6 @@ class SettingsScreen extends StatelessWidget {
     );
   }
 }
-
 
 class DeviceStatusContainer extends StatelessWidget {
   final IconData icon;
