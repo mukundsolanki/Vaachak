@@ -13,6 +13,3 @@ class IPAddressProvider extends ChangeNotifier {
   }
 
 }
-
-}
-
