@@ -19,12 +19,18 @@ Introducing Vaachak,a groundbreaking solution that goes beyond traditional commu
 
 4) Expressive Emotions:This app will help users to express their emotions better with the help of the therapist, therefore improving their mental health.
 
+   <img src="https://github.com/Gresey/Vaachak-TecHacks/assets/113979215/ee35a303-88f9-492b-a798-95ef75194f6c" width="200" height="200">
+   <img src="https://github.com/Gresey/Vaachak-TecHacks/assets/113979215/883a2c44-7b47-4998-aeae-56b1fbff6bfc"width="200" height="200">
+
+
+
 ## **FEASIBILITY**
 
 People with any type of disorder that stops them from speaking can use Vaachak to communicate efficiently which will help them to communicate and express themselves to everyone seamlessly, therefore opening opportunities for them in various fields like education, and research and the end helping
 them in getting better employment opportunities.
 
-
+## PPT
+[Vaachak](https://www.canva.com/design/DAF6Wff3jhg/c_VD947svp9xD8zCkgD9Jw/edit?utm_content=DAF6Wff3jhg&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
 ## **ECONOMIZING THE COMMUNICATION EXPERIENCE** 
 
