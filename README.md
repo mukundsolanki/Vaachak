@@ -67,4 +67,3 @@ We have maintained a single branch `main` will all the commits from the team, it
 
 ## **Contributions**
 So here's the call to action, folks. Whether you're a developer, enthusiast, or someone passionate about making a difference, Vaachak welcomes you to contribute to this incredible initiative.
-#### 🚀Join the Vaachak Revolution - Where Communication Knows No Bounds! 🚀
