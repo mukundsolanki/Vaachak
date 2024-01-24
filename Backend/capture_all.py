@@ -14,10 +14,10 @@ offset=20 # because the handImage is very cropped this adds some space
 imageSize = 48
 pictures=500
 count=0
-total_classes=27
-capture = cv2.VideoCapture("http://192.168.29.193:5000/stream") # For capturing video using webcam
+total_classes=26
+capture = cv2.VideoCapture("http://192.168.161.103:5000/stream") # For capturing video using webcam
 
-for class_name in range(5,total_classes):
+for class_name in range(0,total_classes):
     if not os.path.exists(f'./data/{class_name}'):
         os.makedirs(f'./data/{class_name}')
     print("Now capturing for class ",class_name)
@@ -36,7 +36,7 @@ for class_name in range(5,total_classes):
                     x2,y2,w2,h2=hand2['bbox']
                     handImage = image[min(y1,y2)-offset:max(y1,y2)+max(h1,h2)+offset,min(x1,x2)-offset:max(x1,x2)+max(w1,w2)+offset]
                     handImage = cv2.cvtColor(handImage,cv2.COLOR_BGR2GRAY)
-                    imageResize = cv2.resize(handImage,(imageSize,imageSize))
+                    # imageResize = cv2.resize(handImage,(imageSize,imageSize))
                 except:
                     continue
                 # print(x1,x2) #x1 is left
