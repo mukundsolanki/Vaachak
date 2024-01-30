@@ -33,3 +33,9 @@ This product is very unique and different from the rest of the products currentl
 
 
 Annddd.... Here is the most exciting part, this device is the most affordable piece of technology with these features and therefore your investment will be profitable for you not only in the long term but in the short term too. Want to use this technology. Just follow the instructions and you will be there.
+
+<img src="https://github.com/Gresey/Vaachak-TecHacks/assets/113979215/c7c8598a-f5dd-403d-9213-de2cac88ee11" width="300" height="300"> 
+  
+ <img src="https://github.com/Gresey/Vaachak-TecHacks/assets/113979215/113d4e21-4efc-48da-960c-cd58afe9d681" width="300" height="300"> 
+  
+ <img src="https://github.com/Gresey/Vaachak-TecHacks/assets/113979215/40d0a3a6-026b-4650-a644-7132899ef2e7" width="400" height="400">
